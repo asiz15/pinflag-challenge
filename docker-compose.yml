@@ -10,7 +10,7 @@ services:
       - DATABASE_HOST=127.0.0.1
       - POSTGRES_USER=pinflag
       - POSTGRES_PASSWORD=GzE9KLaEk
-      - POSTGRES_DB=pinflag_chanllenge
+      - POSTGRES_DB=pinflag_challenge
     ports: 
       - 5432:5432
 
