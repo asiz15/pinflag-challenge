@@ -27,6 +27,10 @@ La documentación detallada de este desafío la puedes encontrar en el siguiente
 
 `DATABASE_PORT=5432`
 
+## Credenciales por defecto PgAdmin
+  - admin@pgadmin.com
+  - JcL2X6gBg
+
 
 
 ## Instalación
