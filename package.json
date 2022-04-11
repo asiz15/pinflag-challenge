@@ -6,7 +6,14 @@
   "scripts": {
     "lint": "eslint --fix src",
     "build": "babel src --ignore src/tests --out-dir build --copy-files --no-copy-ignored --source-maps inline",
-    "start": "npm run lint && npm run build && node ./build/index.js"
+    "start": "npm run lint && npm run build && node ./build/index.js",
+    "dev": "nodemon --watch src --exec npm run start",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --silent",
+    "test:watch": "npm run test -- --watch",
+    "test:helpers": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --silent -- -t helpers.test",
+    "test:rest": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --silent -- -t endpoints.test",
+    "test:graphql": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --silent -- -t graphql.test"
+  
   },
   "repository": {
     "type": "git",
@@ -16,15 +23,16 @@
   "author": "Javier Ruiz",
   "license": "UNLICENSED",
   "dependencies": {
+    "apollo-server-express": "^3.6.7",
     "axios": "^0.24.0",
     "dotenv": "^11.0.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.2.0",
     "express-validator": "^6.14.0",
+    "graphql": "^16.3.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0"
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -39,7 +47,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "gulp-babel": "^8.0.0",
-    "nodemon": "^2.0.6",
-    "sequelize-auto": "^0.6.5"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "sequelize-auto": "^0.6.5",
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.2"
   }
 }
