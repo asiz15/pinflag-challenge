@@ -1,0 +1,27 @@
+version: "3.8"
+
+services: 
+  postgres:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgres/data
+    restart: always
+    environment: 
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=pinflag
+      - POSTGRES_PASSWORD=GzE9KLaEk
+      - POSTGRES_DB=pinflag_chanllenge
+    ports: 
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: "admin@pgadmin.com"
+      PGADMIN_DEFAULT_PASSWORD: "JcL2X6gBg"
+    ports:
+      - "80:80"
+    depends_on: 
+      - postgres
+volumes:
+  db-data:
