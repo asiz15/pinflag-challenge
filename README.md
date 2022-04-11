@@ -10,7 +10,7 @@ Este proyecto esta basado en [Nodejs Challenge](https://www.google.com) de Pinfl
 
 
 ## Documentación
-La documentación detallada de este desafío la puedes encontrar en el siguiente [link.]() 
+La documentación detallada de este desafío la puedes encontrar en el siguiente [link.](https://alex-silva.gitbook.io/pinflag-challenge/) 
 
 
 
